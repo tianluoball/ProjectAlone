@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b22fef53ba9c146ba737340629e893, type: 3}
+  m_Name: Test Game Item 01
+  m_EditorClassIdentifier: 
+  ID: 0fcf4791-6384-44aa-bf79-c424e1db15fb
+  _name: Test Item 01
+  description: 'Testing: Tian'
+  sprite: {fileID: 21300000, guid: 7b331d873bbb37c4f9946f1423a58b38, type: 3}
+  SlotDimension:
+    Height: 1
+    Width: 1

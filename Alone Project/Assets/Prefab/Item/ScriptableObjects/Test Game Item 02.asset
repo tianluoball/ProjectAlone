@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b22fef53ba9c146ba737340629e893, type: 3}
+  m_Name: Test Game Item 02
+  m_EditorClassIdentifier: 
+  ID: f81086fb-5e27-4ac5-aee0-8c9fb77145c2
+  _name: Test Item 02
+  description: 'Testing: Tian loves Ge very much'
+  sprite: {fileID: 21300000, guid: a7c4960747a701443bb038d28988591f, type: 3}
+  SlotDimension:
+    Height: 1
+    Width: 2
+  itemCost: 1

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Building
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-24.05241,"y":30.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-340.0,"y":-314.0},"guid":"8ff2a9ec-1a85-49a8-8bb3-2ede6a8d3086","$version":"A","$type":"Unity.VisualScripting.Start","$id":"9"},{"chainable":false,"member":{"name":"current","parameterTypes":null,"targetType":"UnityEngine.EventSystems.EventSystem","targetTypeName":"UnityEngine.EventSystems.EventSystem","$version":"A"},"defaultValues":{"input":null},"position":{"x":-153.0,"y":-314.0},"guid":"96e2615a-8bfa-4239-8bf6-d31fd437f2da","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"11"},{"defaultValues":{},"position":{"x":-294.0,"y":-121.0},"guid":"faaab034-8ae0-43a0-997d-38022f02f44b","$version":"A","$type":"Unity.VisualScripting.This","$id":"14"},{"defaultValues":{},"position":{"x":-358.0,"y":13.0},"guid":"28492e2a-a80f-496b-a7c8-477a89daca24","$version":"A","$type":"Unity.VisualScripting.CreateDictionary","$id":"16"},{"chainable":false,"member":{"name":"Add","parameterTypes":["System.Object","System.Object"],"targetType":"System.Collections.IDictionary","targetTypeName":"System.Collections.IDictionary","$version":"A"},"defaultValues":{},"position":{"x":-118.0,"y":-10.0},"guid":"90f248ab-ad56-418d-a12c-1aa8cbfa0922","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"18"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"assign","guid":"818b2b49-7e43-4104-8197-e78bce06e074","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"self","destinationUnit":{"$ref":"11"},"destinationKey":"input","guid":"25df055e-1a6d-400b-aeab-f7e93eb1187c","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"16"},"sourceKey":"dictionary","destinationUnit":{"$ref":"18"},"destinationKey":"target","guid":"5ea05247-7c7c-49ad-b0a5-0fdbbe40c892","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
