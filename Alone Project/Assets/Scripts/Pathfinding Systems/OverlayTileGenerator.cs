@@ -7,6 +7,7 @@ public class OverlayTileGenerator : MonoBehaviour
 {
     public int charaJumpHeight;
     private static OverlayTileGenerator _instance;
+    public Tilemap tilemap;
 
     public static OverlayTileGenerator Instance { get { return _instance; } }
 
@@ -28,7 +29,7 @@ public class OverlayTileGenerator : MonoBehaviour
     }
     void Start()
     {
-        var tileMap = gameObject.GetComponentInChildren<Tilemap>();
+        var tileMap = tilemap;
         map = new Dictionary<Vector2Int, OverlayTile>();
         BoundsInt bounds = tileMap.cellBounds;
 
