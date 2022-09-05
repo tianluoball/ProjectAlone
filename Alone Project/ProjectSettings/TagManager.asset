@@ -10,11 +10,12 @@ TagManager:
   - Block
   - Resource
   - Bed
+  - Animal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InventoryItem
   - Water
   - UI
   - 

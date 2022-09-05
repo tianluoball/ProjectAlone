@@ -84,5 +84,42 @@ public class AStarManager
         return Mathf.Abs(start.gridLocation.x - neighbour.gridLocation.x) + Mathf.Abs(start.gridLocation.y - neighbour.gridLocation.y);
     }
 
-    
+    public OverlayTile GetManhattenDistanceInRangeTiles(OverlayTile charaPos, OverlayTile selfPos, List<OverlayTile> inRangeTiles, bool isAttack)
+    {
+        foreach (OverlayTile tile in inRangeTiles)
+        {
+            tile.G = GetManhattenDistance(selfPos, tile);
+            tile.H = GetManhattenDistance(charaPos, tile);
+        }
+
+        if (isAttack == true)
+        {
+            return inRangeTiles.OrderBy(x => x.F).First();       
+        }
+        else
+        {
+            return inRangeTiles.OrderBy(x => x.F).Last();
+        }
+        
+    }
+
+    public OverlayTile TrueNavigator(OverlayTile charaPos, OverlayTile selfPos, List<OverlayTile> inRangeTiles, bool isAttack)
+    {
+        foreach (OverlayTile tile in inRangeTiles)
+        {
+            tile.G = FindPath(tile, selfPos).Count();
+            tile.H = FindPath(tile, charaPos).Count();
+        }
+
+        if (isAttack == true)
+        {
+            return inRangeTiles.OrderBy(x => x.F).First();
+        }
+        else
+        {
+            return inRangeTiles.OrderBy(x => x.F).Last();
+        }
+
+    }
+
 }

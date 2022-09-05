@@ -21,7 +21,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] Transform canvasTransform;
 
     InventoryItem overlapItem;
-    InventoryItem selectedItem;
+    public InventoryItem selectedItem;
     RectTransform rectTransform;
 
     InventoryHighlight highlight;
@@ -35,6 +35,11 @@ public class InventoryController : MonoBehaviour
 
     private void Update()
     {
+        if (selectedItem != null)
+        {
+            selectedItem.GetComponent<RectTransform>().SetParent(selectedItemGrid.GetComponent<RectTransform>());
+        }
+
         ItemDrag();
 
 
@@ -73,7 +78,7 @@ public class InventoryController : MonoBehaviour
             return;
         }
 
-        selectedItemGrid.PlaceItem(itemToInsert, positionOnGrid.Value.x, positionOnGrid.Value.y);
+        inventory.PlaceItem(itemToInsert, positionOnGrid.Value.x, positionOnGrid.Value.y);
     }
 
     private void HandleHighlight()
@@ -92,7 +97,6 @@ public class InventoryController : MonoBehaviour
                 highlight.Show(true);
                 highlight.SetSize(itemToHighlight);
                 highlight.SetPosition(selectedItemGrid, itemToHighlight);
-                //highlight.SetParent(selectedItemGrid);
             }
             else
             {
@@ -104,14 +108,20 @@ public class InventoryController : MonoBehaviour
             highlight.Show(selectedItemGrid.BoundaryCheck(positionOnGrid.x,positionOnGrid.y,selectedItem.width, selectedItem.height));
             highlight.SetSize(selectedItem);
             highlight.SetPosition(selectedItemGrid, selectedItem, positionOnGrid.x, positionOnGrid.y);
-            //highlight.SetParent(selectedItemGrid);
         }
     }
 
 
     public void LeftMouseInteract()
     {
-        Vector2Int tileGridPosition = GetTileGridPosition();
+        Vector2 position = Input.mousePosition;
+
+        if (selectedItem != null)
+        {
+            position.x -= (selectedItem.gameItemData.SlotDimension.Width - 1) * ItemGrid.tileSizeWidth / 2;
+            position.y += (selectedItem.gameItemData.SlotDimension.Height - 1) * ItemGrid.tileSizeHeight / 2;
+        }
+        Vector2Int tileGridPosition = selectedItemGrid.GetTileGridPosition(position);
 
         if (selectedItem == null)
         {
@@ -139,6 +149,7 @@ public class InventoryController : MonoBehaviour
     private void PlaceItem(Vector2Int tileGridPosition)
     {
         bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);
+
         if (complete)
         {
             selectedItem = null;

@@ -30,6 +30,7 @@ public class InventoryHighlight : MonoBehaviour
     {
         if(targetGrid == null) { return; }
         highlighter.SetParent(targetGrid.GetComponent<RectTransform>());
+        highlighter.transform.SetSiblingIndex(0);
     }
 
     public void SetPosition(ItemGrid targetGrid, InventoryItem targetItem, int positionX, int positionY)

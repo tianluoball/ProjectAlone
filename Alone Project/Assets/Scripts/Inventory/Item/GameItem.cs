@@ -14,7 +14,11 @@ public class GameItem : ScriptableObject
     public Dimensions SlotDimension;
     public int itemCost;
     public int power;
+    public enum ItemType { Resource, Food }
     public string resourceType;
+    public int staminaRecover;
+    public int sansRecover;
+    public string foodType;
 }
 
 [Serializable]
